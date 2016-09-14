@@ -7,7 +7,7 @@ import com.yanin.greendaodemo.model.DaoSession;
 
 public class DBService {
 
-    private static final String DB_NAME = "colorgy.db";
+    private static final String DB_NAME = "greedDaoDemo.db";
     private DaoSession daoSession;
 
     public void init(Context context) {
