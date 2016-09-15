@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_age"
+        android:id="@+id/menu_age" />
+    <item
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_wang"
+        android:id="@+id/menu_wang" />
+    <item
+        app:showAsAction="ifRoom"
+        android:title="@string/menu_big_chang"
+        android:id="@+id/menu_old_chang" />
+
+</menu>

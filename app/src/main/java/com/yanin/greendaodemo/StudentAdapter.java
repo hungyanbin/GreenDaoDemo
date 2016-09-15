@@ -39,6 +39,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
         holder.textName.setText(student.getName());
         holder.textId.setText("" + student.getId());
+        holder.textAge.setText(student.getAge() + "歲");
     }
 
     @Override
@@ -50,11 +51,13 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
         private TextView textName;
         private TextView textId;
+        private TextView textAge;
 
         public ViewHolder(View itemView) {
             super(itemView);
             textName = (TextView) itemView.findViewById(R.id.textName);
             textId = (TextView) itemView.findViewById(R.id.textId);
+            textAge = (TextView) itemView.findViewById(R.id.textAge);
         }
     }
 }
