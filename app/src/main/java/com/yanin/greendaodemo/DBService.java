@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.yanin.greendaodemo.model.DaoMaster;
 import com.yanin.greendaodemo.model.DaoSession;
+import com.yanin.greendaodemo.model.StudentDao;
 
 public class DBService {
 
@@ -16,5 +17,9 @@ public class DBService {
         DaoMaster daoMaster = new DaoMaster(helper.getWritableDatabase());
 
         daoSession = daoMaster.newSession();
+    }
+
+    public StudentDao getStudentDao(){
+        return daoSession.getStudentDao();
     }
 }
