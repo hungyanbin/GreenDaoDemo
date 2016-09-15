@@ -20,6 +20,10 @@ android {
     }
 }
 
+greendao {
+    schemaVersion 2
+}
+
 dependencies {
     compile 'org.greenrobot:greendao:3.1.1'
     compile 'com.android.support:design:24.2.0'

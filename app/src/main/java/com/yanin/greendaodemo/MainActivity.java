@@ -12,7 +12,6 @@ import com.yanin.greendaodemo.factory.ServiceFactory;
 import com.yanin.greendaodemo.model.Student;
 import com.yanin.greendaodemo.model.StudentDao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onAddStudent(){
-        Student student = new Student(null, nameFactory.generateName());
+        Student student = new Student(null, nameFactory.generateName(), 10);
         long id = studentDao.insert(student);
 
         student = studentDao.load(id);

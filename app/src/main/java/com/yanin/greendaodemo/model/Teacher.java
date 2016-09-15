@@ -7,7 +7,7 @@ import org.greenrobot.greendao.annotation.Id;
 import org.greenrobot.greendao.annotation.Generated;
 
 @Entity
-public class Student {
+public class Teacher {
 
     @Id(autoincrement = true)
     private Long id;
@@ -15,17 +15,14 @@ public class Student {
     @NonNull
     private String name;
 
-    private int age;
-
-    @Generated(hash = 2109495194)
-    public Student(Long id, @NonNull String name, int age) {
+    @Generated(hash = 530788891)
+    public Teacher(Long id, @NonNull String name) {
         this.id = id;
         this.name = name;
-        this.age = age;
     }
 
-    @Generated(hash = 1556870573)
-    public Student() {
+    @Generated(hash = 1630413260)
+    public Teacher() {
     }
 
     public Long getId() {
@@ -43,15 +40,4 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
-
-    public int getAge() {
-        return this.age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-
-
 }
