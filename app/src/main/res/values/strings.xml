@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">GreenDaoDemo</string>
+    <string name="title_student">學生</string>
+    <string name="title_teacher">教師</string>
     <string name="tool_id">5</string>
     <string name="tool_name">王大明</string>
     <string name="tool_age">12歲</string>

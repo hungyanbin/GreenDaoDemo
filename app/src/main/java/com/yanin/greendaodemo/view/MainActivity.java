@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         studentDao = dbService.getStudentDao();
         setupRecycleView();
         setupFAB();
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getString(R.string.title_student));
+        setSupportActionBar(toolbar);
     }
 
     private void setupFAB() {
