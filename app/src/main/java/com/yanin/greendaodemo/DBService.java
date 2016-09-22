@@ -5,6 +5,7 @@ import android.content.Context;
 import com.yanin.greendaodemo.model.DaoMaster;
 import com.yanin.greendaodemo.model.DaoSession;
 import com.yanin.greendaodemo.model.StudentDao;
+import com.yanin.greendaodemo.model.TeacherDao;
 
 public class DBService {
 
@@ -21,5 +22,9 @@ public class DBService {
 
     public StudentDao getStudentDao(){
         return daoSession.getStudentDao();
+    }
+
+    public TeacherDao getTeacherDao(){
+        return daoSession.getTeacherDao();
     }
 }
