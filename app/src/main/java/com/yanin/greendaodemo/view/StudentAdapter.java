@@ -1,4 +1,4 @@
-package com.yanin.greendaodemo;
+package com.yanin.greendaodemo.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.yanin.greendaodemo.R;
 import com.yanin.greendaodemo.model.Student;
 
 import java.util.ArrayList;

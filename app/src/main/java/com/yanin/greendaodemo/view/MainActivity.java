@@ -1,5 +1,6 @@
-package com.yanin.greendaodemo;
+package com.yanin.greendaodemo.view;
 
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,10 +11,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.yanin.greendaodemo.DBService;
+import com.yanin.greendaodemo.R;
 import com.yanin.greendaodemo.factory.StudentFactory;
 import com.yanin.greendaodemo.factory.ServiceFactory;
 import com.yanin.greendaodemo.model.Student;
 import com.yanin.greendaodemo.model.StudentDao;
+import com.yanin.greendaodemo.model.Teacher;
 
 import org.greenrobot.greendao.Property;
 import org.greenrobot.greendao.query.QueryBuilder;
@@ -45,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
                 onAddStudent();
             }
         });
+        FloatingActionButton btnTeacher = (FloatingActionButton) findViewById(R.id.btnTeacher);
+        btnTeacher.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startTeacherActivity();
+            }
+        });
+    }
+
+    private void startTeacherActivity(){
+        Intent intent = new Intent(this, TeacherActivity.class);
+        startActivity(intent);
     }
 
     private void setupRecycleView() {

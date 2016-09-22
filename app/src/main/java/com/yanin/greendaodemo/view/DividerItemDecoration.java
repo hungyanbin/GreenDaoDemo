@@ -1,4 +1,4 @@
-package com.yanin.greendaodemo;
+package com.yanin.greendaodemo.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
