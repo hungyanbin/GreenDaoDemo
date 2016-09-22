@@ -1,15 +1,18 @@
 package com.yanin.greendaodemo.view;
 
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
 import com.yanin.greendaodemo.DBService;
 import com.yanin.greendaodemo.R;
+import com.yanin.greendaodemo.factory.DialogFactory;
 import com.yanin.greendaodemo.factory.ServiceFactory;
 import com.yanin.greendaodemo.factory.TeacherFactory;
 import com.yanin.greendaodemo.model.Student;
@@ -44,6 +47,13 @@ public class TeacherActivity extends AppCompatActivity {
         RecyclerView recycleStudent = (RecyclerView) findViewById(R.id.recycleTeacher);
 
         teacherAdapter = new TeacherAdapter();
+        teacherAdapter.setOnItemClickListener(new TeacherAdapter.OnItemClickListener() {
+            @Override
+            public void onClick(Teacher teacher) {
+                AlertDialog dialog = DialogFactory.getStudentDialog(TeacherActivity.this);
+                dialog.show();
+            }
+        });
         recycleStudent.setAdapter(teacherAdapter);
         recycleStudent.setLayoutManager(new LinearLayoutManager(this));
         recycleStudent.addItemDecoration(new DividerItemDecoration(this));

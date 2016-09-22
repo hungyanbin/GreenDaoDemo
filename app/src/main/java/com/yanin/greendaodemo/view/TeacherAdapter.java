@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.yanin.greendaodemo.R;
-import com.yanin.greendaodemo.model.Student;
 import com.yanin.greendaodemo.model.Teacher;
 
 import java.util.ArrayList;
@@ -16,6 +15,7 @@ import java.util.List;
 public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.ViewHolder>{
 
     private List<Teacher> teachers = new ArrayList<>();
+    private OnItemClickListener onItemClickListener;
 
     public void addTeacher(Teacher teacher){
         teachers.add(teacher);
@@ -28,6 +28,9 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.ViewHold
         notifyDataSetChanged();
     }
 
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -38,10 +41,16 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Teacher teacher = teachers.get(position);
+        final Teacher teacher = teachers.get(position);
 
         holder.textName.setText(teacher.getName());
         holder.textId.setText("" + teacher.getId());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onItemClickListener.onClick(teacher);
+            }
+        });
     }
 
     @Override
@@ -59,5 +68,9 @@ public class TeacherAdapter extends RecyclerView.Adapter<TeacherAdapter.ViewHold
             textName = (TextView) itemView.findViewById(R.id.textName);
             textId = (TextView) itemView.findViewById(R.id.textId);
         }
+    }
+
+    public interface OnItemClickListener{
+        void onClick(Teacher teacher);
     }
 }
