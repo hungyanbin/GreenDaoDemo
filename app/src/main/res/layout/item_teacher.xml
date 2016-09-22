@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:textColor="@color/colorAccent"
-        tools:text="@string/tool_name"/>
+        tools:text="@string/tool_teacher"/>
 
     <TextView
         android:id="@+id/textId"

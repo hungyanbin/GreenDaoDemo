@@ -6,6 +6,7 @@
     <string name="cancel">取消</string>
     <string name="tool_id">5</string>
     <string name="tool_name">王大明</string>
+    <string name="tool_teacher">王老師</string>
     <string name="tool_age">12歲</string>
     <string name="menu_age">Age</string>
     <string name="menu_wang">王</string>

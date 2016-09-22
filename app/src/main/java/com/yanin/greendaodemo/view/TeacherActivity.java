@@ -16,6 +16,7 @@ import com.yanin.greendaodemo.factory.DialogFactory;
 import com.yanin.greendaodemo.factory.ServiceFactory;
 import com.yanin.greendaodemo.factory.TeacherFactory;
 import com.yanin.greendaodemo.model.Student;
+import com.yanin.greendaodemo.model.StudentDao;
 import com.yanin.greendaodemo.model.Teacher;
 import com.yanin.greendaodemo.model.TeacherDao;
 
@@ -50,7 +51,12 @@ public class TeacherActivity extends AppCompatActivity {
         teacherAdapter.setOnItemClickListener(new TeacherAdapter.OnItemClickListener() {
             @Override
             public void onClick(Teacher teacher) {
-                AlertDialog dialog = DialogFactory.getStudentDialog(TeacherActivity.this);
+                DBService dbService = ServiceFactory.getDbService();
+                StudentDao studentDao = dbService.getStudentDao();
+                List<Student> students = studentDao.loadAll();
+                //reset to get latest students
+                teacher.resetStudents();
+                AlertDialog dialog = DialogFactory.getStudentDialog(TeacherActivity.this, teacher, students);
                 dialog.show();
             }
         });

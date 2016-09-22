@@ -7,11 +7,29 @@
     android:layout_height="wrap_content">
 
     <TextView
+        android:id="@+id/textTeacher"
+        android:textColor="@color/colorAccent"
+        tools:text="@string/tool_teacher"
+        android:gravity="center"
+        android:layout_alignParentEnd="true"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:id="@+id/teacherDivider"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_toStartOf="@id/textTeacher"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#CC000000"/>
+
+    <TextView
         android:id="@+id/textAge"
         android:textColor="#008800"
         tools:text="@string/tool_age"
         android:paddingStart="8dp"
-        android:layout_alignParentEnd="true"
+        android:layout_toStartOf="@id/teacherDivider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

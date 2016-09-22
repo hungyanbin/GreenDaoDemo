@@ -26,6 +26,6 @@ public class StudentFactory {
     }
 
     public Student generateStudent(){
-        return new Student(null, generateName(), generateAge());
+        return new Student(null, 0, generateName(), generateAge());
     }
 }
