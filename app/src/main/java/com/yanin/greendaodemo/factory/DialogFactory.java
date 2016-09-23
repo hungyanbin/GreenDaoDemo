@@ -48,6 +48,7 @@ public class DialogFactory {
                     public void onClick(DialogInterface dialogInterface, int i, boolean checked) {
                         if(checked){
                             students.get(i).setTeacher(teacher);
+                            //TODO update to DB
                             students.get(i).update();
                         }
                     }

@@ -54,7 +54,7 @@ public class TeacherActivity extends AppCompatActivity {
                 DBService dbService = ServiceFactory.getDbService();
                 StudentDao studentDao = dbService.getStudentDao();
                 List<Student> students = studentDao.loadAll();
-                //reset to get latest students
+                //TODO reset to get latest students
                 teacher.resetStudents();
                 AlertDialog dialog = DialogFactory.getStudentDialog(TeacherActivity.this, teacher, students);
                 dialog.show();
